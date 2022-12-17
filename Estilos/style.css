@@ -28,7 +28,6 @@ section#login{
     position:absolute;
     top:50%;
     left:50%;
-    transform:translate(-50% ,-50%);
     overflow: hidden;/*Tudo que ta fora da borda se esconde*/
 
     background-color: white;
@@ -38,6 +37,7 @@ section#login{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.548);
     transition: width 0.5s, height 0.5s;
     transition-timing-function: ease;
+    transform:translate(-50% ,-50%);
 }
 
 section#login > div#imagem{
@@ -65,12 +65,29 @@ form > div.campo{
     display: block;
     height: 40px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 5px 0px;
+
 }
 div.campo > label{
     display: none;
 
+}
+div.campo > i{
+    color: black;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+div.campo > input{
+    background-color:rgba(0, 0, 0, 0.527) ;
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-11px);/* faça como ultima linha do seletor*/
 }
 form > input[type=submit]{
     display: block;
@@ -80,11 +97,15 @@ form > input[type=submit]{
     background-color: black;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 form > input[type=submit]:hover{
     background-color: gray;
+}
+div.campo > input:focus-within{/*   Altera o foco*/
+    background-color: white;
+    border: none;
 }
 form > a.botao{
     display: block;
